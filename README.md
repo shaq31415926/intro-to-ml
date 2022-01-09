@@ -4,7 +4,7 @@
 ## Content
 This repo contains all the code needed to cluster a sample of audio files using K-Means.
 
-Reference: XXX
+Data was downloaded from here: http://marsyas.info/downloads/datasets.html
 
 
 ## Requirements
@@ -13,6 +13,7 @@ Reference: XXX
 
 
 ## Structure
+```
 ├── data          <- The data with 30 audio files (.wav)
 │   
 ├── notebooks          
@@ -27,3 +28,4 @@ Reference: XXX
 ├── requirements.txt   <- The libraries required for reproducing the environment.
 │
 └──── 
+```
