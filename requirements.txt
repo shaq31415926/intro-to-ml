@@ -1,0 +1,7 @@
+jupyter
+librosa
+matplotlib
+pandas
+scipy
+sklearn
+seaborn
