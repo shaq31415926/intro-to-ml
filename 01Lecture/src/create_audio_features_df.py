@@ -23,13 +23,19 @@ def create_audio_features_df(list_of_audio_files):
         # energy
         energy = scipy.linalg.norm(x)
 
+        # duration
+        S = librosa.stft(x)
+        duration = librosa.get_duration(S=S, sr=sr)
+
         # store as a dict
         audio_features.append({"audio_file_name": audio_file_name,
                                  "zero_crossing_rate": zcr,
-                                 "energy": energy
+                                 "energy": energy,
+                               "duration":duration
                                  })
         
     audio_features_df = pd.DataFrame(audio_features)
     audio_features_df = audio_features_df.set_index("audio_file_name")
+
         
     return audio_features_df
