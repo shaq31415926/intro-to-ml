@@ -141,9 +141,9 @@ def increase_profile_number():
     st.session_state.profile_number += 1
 
 
-user_profile = pd.read_csv(".data/user_profile_data.csv")
-tinder_data = pd.read_csv(".data/tinder_data_prepared.csv")
-tinder_data_raw = pd.read_csv("07Lecture/my-tinder-app/data/tinder_data_filtered.csv")
+user_profile = pd.read_csv("./data/user_profile_data.csv")
+tinder_data = pd.read_csv("./data/tinder_data_prepared.csv")
+tinder_data_raw = pd.read_csv("./data/tinder_data_filtered.csv")
 
 
 def get_match_info(profile_ids, tinder_data_raw):
