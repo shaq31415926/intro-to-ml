@@ -127,11 +127,11 @@ if st.session_state.login_count == 0:
             user_data = one_hot(user_data, ["drinks", 'drugs', 'job', 'smokes', 'body_profile', 'new_languages'])
 
             # store and manipulate user data
-            col_order = pd.read_csv("data/col_names.csv")
+            col_order = pd.read_csv("./data/col_names.csv")
             user_data_transformed = pd.concat([col_order, user_data], axis=0)
             # replace missing values with na
             user_data_transformed.fillna(0, inplace=True)
-            user_data_transformed.to_csv("data/user_profile_data.csv", index=False)
+            user_data_transformed.to_csv("./data/user_profile_data.csv", index=False)
 
 if 'profile_number' not in st.session_state:
     st.session_state.profile_number = 0
@@ -156,7 +156,7 @@ def get_match_info(profile_ids, tinder_data_raw):
     st.write("Bio:\n", list(match_bio)[0])
 
 def display_match_info():
-    profile_ids = list(pd.read_csv("data/matches.csv")["0"])
+    profile_ids = list(pd.read_csv("./data/matches.csv")["0"])
     get_match_info(profile_ids, tinder_data_raw)
 
     # add button like or dislike
@@ -193,7 +193,7 @@ if st.session_state.login_count == 1:
                                           tinder_data,
                                           number_recommendations=10)
         # dump this in a file
-        pd.DataFrame(profile_ids).to_csv("data/matches.csv", index=False)
+        pd.DataFrame(profile_ids).to_csv("./data/matches.csv", index=False)
 
         get_match_info(profile_ids, tinder_data_raw)
 
@@ -209,4 +209,4 @@ if st.session_state.profile_number >= 1 and st.session_state.profile_number < 10
     display_match_info()
 
 if st.session_state.profile_number >= 10:
-    st.image("images/Screenshot 2024-06-24 at 23.06.53.png")
+    st.image("./images/Screenshot 2024-06-24 at 23.06.53.png")
